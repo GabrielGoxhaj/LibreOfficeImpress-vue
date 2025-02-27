@@ -16,6 +16,7 @@
     margin-left: 5px;
     display: flex;
     align-items: center;
+    cursor: default;
 }
 
 .title>span {

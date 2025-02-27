@@ -13,6 +13,7 @@ import PresentazioneDropdown from './components/MenuDropdowns/PresentazioneDropd
 import StrumentiDiapositiva from './components/MenuDropdowns/StrumentiDiapositiva.vue';
 import FinestraDropdown from './components/MenuDropdowns/FinestraDropdown.vue';
 import AiutoDropdown from './components/MenuDropdowns/AiutoDropdown.vue';
+import DiapositiveMenu from './components/DiapositiveMenu.vue';
 
 const showDropdown = ref(null);
 const dropdownPosition = ref({ top: 0, left: 0 });
@@ -28,18 +29,33 @@ const toggleDropdown = ({ type, position }) => {
     <TitleBar />
     <div class="menu">
       <MenuLibreOfficeImpress @toggle-dropdown="toggleDropdown" />
+      <div id="dropdownsWrapper">
+        <FileDropdown v-if="showDropdown === 'File'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <ModificaDropdown v-if="showDropdown === 'Modifica'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <VisualizzaDropdown v-if="showDropdown === 'Visualizza'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <InserisciDropdown v-if="showDropdown === 'Inserisci'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <FormatoDropdown v-if="showDropdown === 'Formato'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <DiapositivaDropdown v-if="showDropdown === 'Diapositiva'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <PresentazioneDropdown v-if="showDropdown === 'Presentazione'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <StrumentiDiapositiva v-if="showDropdown === 'Strumenti'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <FinestraDropdown v-if="showDropdown === 'Finestra'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <AiutoDropdown v-if="showDropdown === 'Aiuto'"
+          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+      </div>
       <MenuIconLibreOfficeImpress />
     </div>
-    <FileDropdown v-if="showDropdown === 'File'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <ModificaDropdown v-if="showDropdown === 'Modifica'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <VisualizzaDropdown v-if="showDropdown === 'Visualizza'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <InserisciDropdown v-if="showDropdown === 'Inserisci'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <FormatoDropdown v-if="showDropdown === 'Formato'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <DiapositivaDropdown v-if="showDropdown === 'Diapositiva'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <PresentazioneDropdown v-if="showDropdown === 'Presentazione'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <StrumentiDiapositiva v-if="showDropdown === 'Strumenti'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <FinestraDropdown v-if="showDropdown === 'Finestra'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-    <AiutoDropdown v-if="showDropdown === 'Aiuto'" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+    <div id="mainWrapper">
+      <DiapositiveMenu />
+    </div>
   </div>
 </template>
 
@@ -52,6 +68,7 @@ const toggleDropdown = ({ type, position }) => {
 
 .menu {
   background-color: #fdfdfd;
+  border-bottom: 1px solid #b0b0b0;
 }
 
 .libreOfficeImpress {
@@ -64,5 +81,13 @@ hr {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+#maiWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 </style>

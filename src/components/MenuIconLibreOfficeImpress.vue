@@ -61,8 +61,7 @@
 button {
     border: 1px solid #fdfdfd;
     background-color: #fdfdfd;
-    padding: 5px;
-    
+    padding: 4px;
 }
 
 button:hover {
@@ -76,5 +75,6 @@ button:hover {
 .vl {
   border-left: 0.5px solid #dfdfdf;
   height: 15px;
+  margin: 1px
 }
 </style>
