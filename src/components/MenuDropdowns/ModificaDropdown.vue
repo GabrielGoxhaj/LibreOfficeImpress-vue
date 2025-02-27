@@ -41,7 +41,6 @@ export default {
 .dropdownModifica {
     position: absolute;
     background-color: #F2F2F2;
-    padding: 2px;
     width: 255px;
     height: auto;
     overflow: auto;
@@ -58,14 +57,32 @@ export default {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 9pt;
     display: block;
-    padding-left: 30px;
-    padding-top: 4px;
+    padding-left: 5px;
+    padding-top: 1px;
     padding-bottom: 4px;
     padding-right: 10px;
     transition: 0.1s;
+    cursor: default;
+}
+
+.dropdownModifica a div {
+    display: flex;
+    align-items: center;
+    padding: auto;
+}
+
+.dropdownModifica a div img {
+    margin-right: 5px;
+    max-width: 16px;
+    max-height: 16px;
 }
 
 .dropdownModifica a:hover {
     background-color: #91C9F7;
+}
+
+hr {
+    margin: 0;
+    color: #d7d7d7;
 }
 </style>
