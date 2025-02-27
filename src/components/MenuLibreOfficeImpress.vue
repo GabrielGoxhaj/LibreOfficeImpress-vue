@@ -53,7 +53,8 @@ export default {
 <style scoped>
 button {
   border: 1px solid #fdfdfd;
-  background-color: #fdfdfd;
+  background-color: #fefefe;
+  font-size: 12px;
 }
 
 button:hover {

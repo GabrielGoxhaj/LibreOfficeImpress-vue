@@ -1,11 +1,11 @@
 <template>
     <div class="diapositiveMenu">
         <div class="title">
-            <p>Diapositive</p>
-            <p>&times;</p>
+            <p style="font-weight: 500;font-size: 11px;">Diapositive</p>
+            <p style="font-size: 16px;">&times;</p>
         </div>
         <div>
-            <img class="diapositive" src="../assets/Impress/diapositive_menu/vuoto.png" />
+            <img class="diapositive" src="../assets/Impress/file_SenzaNome1/menudiapositive.png" />
         </div>
     </div>
 </template>
@@ -14,14 +14,15 @@
 .diapositiveMenu {
     width: 168px;
     border-right: 1px solid #b0b0b0;
-    border-bottom: 1px solid #b0b0b0;
 }
 
 .title {
     display: flex;
     justify-content: space-between;
     background-color: #f0f0f0;
-    padding: 4px;
+    padding-left: 2px;
+    align-items: center;
+    
 }
 
 .title > p {

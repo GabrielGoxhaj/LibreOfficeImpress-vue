@@ -14,6 +14,7 @@ import StrumentiDiapositiva from './components/MenuDropdowns/StrumentiDiapositiv
 import FinestraDropdown from './components/MenuDropdowns/FinestraDropdown.vue';
 import AiutoDropdown from './components/MenuDropdowns/AiutoDropdown.vue';
 import DiapositiveMenu from './components/DiapositiveMenu.vue';
+import MenuLaterale from './components/MenuLaterale.vue';
 
 const showDropdown = ref(null);
 const dropdownPosition = ref({ top: 0, left: 0 });
@@ -55,6 +56,11 @@ const toggleDropdown = ({ type, position }) => {
     </div>
     <div id="mainWrapper">
       <DiapositiveMenu />
+      <div><img src="./assets/Impress/file_SenzaNome1/diapositiva1.png" /></div>
+      <MenuLaterale />
+    </div>
+    <div>
+      <img style="  border-top: 1px solid #b0b0b0;" src="./assets/Impress/footer.png" />
     </div>
   </div>
 </template>
@@ -64,6 +70,7 @@ const toggleDropdown = ({ type, position }) => {
   width: 800px;
   height: 560px;
   background-color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 .menu {
@@ -83,11 +90,10 @@ hr {
   margin-bottom: 0;
 }
 
-#maiWrapper {
+#mainWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+  width: 100%;
+  justify-content: space-around;
 }
 </style>
