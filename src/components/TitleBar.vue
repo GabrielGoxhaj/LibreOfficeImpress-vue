@@ -5,6 +5,7 @@
             <span> {{ title_pptx }} — LibreOffice Impress</span>
         </div>
         <div class="buttons">
+            <div class="minimize" id="impressMinimize"><img src="../assets/Impress/icons/icon-minimize.svg" /></div>
             <div class="restore" id="impressRestore"><img src="../assets/Impress/icons/icon-restore.svg" /></div>
             <div class="close" id="impressClose">&times;</div>
         </div>
@@ -46,7 +47,7 @@ export default {
     justify-content: space-between;
 }
 
-.restore:hover {
+.restore:hover, .minimize:hover {
     background: #e5e5e5;
 }
 
@@ -61,6 +62,17 @@ export default {
     width: 60px;
     height: 26px;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto auto;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.minimize {
+    display: inline;
+    float: right;
+    width: 60px;
+    height: 26px;
     font-family: 'Times New Roman', Times, serif;
     margin: auto auto;
     text-align: center;

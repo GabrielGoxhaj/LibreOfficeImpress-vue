@@ -18,6 +18,7 @@ import MenuLaterale from './components/MenuLaterale.vue';
 import Nascondi from './components/Nascondi.vue';
 import DocumentiRecentiDropdown from './components/MenuDropdowns/FileDropdowns/DocumentiRecentiDropdown.vue';
 import DiapositivaCurrent_IlSistemaSolare from './components/IlSistemaSolare/DiapositivaCurrent_IlSistemaSolare.vue';
+import DiapositiveMenu_IVA from './components/IVA/DiapositiveMenu_IVA.vue';
 
 const diapositivaNumber = ref(1);
 const maxDiapositiva = ref(1);
@@ -93,11 +94,11 @@ const toggleDropdown = ({ type, position }) => {
       <MenuIconLibreOfficeImpress />
     </div>
     <div id="mainWrapper">
-      <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <DiapositiveMenu_IVA v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
       <div style="display:flex; align-items: center;">
-      <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 84.26px'"/> <!-- width DiapositiveMenu 168.52px -->
+      <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
       <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
-      <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
+      <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
       <MenuLaterale v-if="isMenuLateraleVisible" />
     </div>
@@ -107,8 +108,13 @@ const toggleDropdown = ({ type, position }) => {
     </div>
   </div>
 
-  <button>Select Il Sistema Solare.pptx</button>
-  <button>Select SenzaNome1</button>
+  <!-- Questi serviranno dopo per testare -->
+  <br />
+  <button>Il Sistema Solare.pptx</button>
+  <button>SenzaNome1</button>
+  <button>IVA.pptx</button>
+  <button>Social Media Marketing.pptx</button>
+  <!--  -->
 </template>
 
 <style scoped>
@@ -140,7 +146,7 @@ hr {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-height: 410px;
+  height: 410px;
 }
 
 .footer {
@@ -154,8 +160,9 @@ hr {
 .numberDiapositiva {
   margin: none;
   margin-left: 7px;
-  font-size: 12px;
+  font-size: 10px;
   margin-right: 4px;
   margin-bottom: 9px;
+  width: 87px;
 }
 </style>
