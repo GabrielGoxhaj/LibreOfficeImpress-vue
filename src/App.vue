@@ -56,7 +56,9 @@ const toggleDropdown = ({ type, position }) => {
     </div>
     <div id="mainWrapper">
       <DiapositiveMenu />
+      <button class="nascondi"></button>
       <div><img src="./assets/Impress/file_SenzaNome1/diapositiva1.png" /></div>
+      <button class="nascondi" style="transform: rotate(180deg);"></button>
       <MenuLaterale />
     </div>
     <div>
@@ -96,4 +98,22 @@ hr {
   width: 100%;
   justify-content: space-around;
 }
+
+.nascondi {
+  border: none;
+  background-image: url("./assets/Impress/nascondi.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 3px;
+}
+
+.nascondi:hover {
+  border: none;
+  background-image: url("./assets/Impress/nascondi-hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 3px;
+}
+
+
 </style>
