@@ -3,7 +3,7 @@
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-nuovo.png">Nuovo</div><g>&#x1F782;</g></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-apri.png"> Apri...</div></a>
         <a>Apri in remoto...</a>
-        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
+        <a @click="dropdownToggle($event, 'DocumentiRecenti')" style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
         <a>Chiudi</a>
         <hr />
         <a style="display: flex; justify-content: space-between;">Procedure guidate<g>&#x1F782;</g></a>
@@ -41,7 +41,19 @@ export default {
             type: Object,
             default: () =>({})
         }
+    },
+    methods: {
+    dropdownToggle(event, dropdownType) {
+      const buttonRect = event.target.getBoundingClientRect();
+      this.$emit('toggle-dropdown', {
+        type: dropdownType,
+        position: {
+          top: buttonRect.bottom,
+          left: buttonRect.left
+        }
+      });
     }
+  }
 }
 </script>
 

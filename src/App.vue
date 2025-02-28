@@ -13,8 +13,11 @@ import PresentazioneDropdown from './components/MenuDropdowns/PresentazioneDropd
 import StrumentiDiapositiva from './components/MenuDropdowns/StrumentiDiapositiva.vue';
 import FinestraDropdown from './components/MenuDropdowns/FinestraDropdown.vue';
 import AiutoDropdown from './components/MenuDropdowns/AiutoDropdown.vue';
-import DiapositiveMenu from './components/DiapositiveMenu.vue';
+import DiapositiveMenu_IlSistemaSolare from './components/IlSistemaSolare/DiapositiveMenu_IlSistemaSolare.vue';
 import MenuLaterale from './components/MenuLaterale.vue';
+import Nascondi from './components/Nascondi.vue';
+import DocumentiRecentiDropdown from './components/MenuDropdowns/FileDropdowns/DocumentiRecentiDropdown.vue';
+
 
 const showDropdown = ref(null);
 const dropdownPosition = ref({ top: 0, left: 0 });
@@ -22,6 +25,14 @@ const dropdownPosition = ref({ top: 0, left: 0 });
 const toggleDropdown = ({ type, position }) => {
   showDropdown.value = showDropdown.value === type ? null : type;
   dropdownPosition.value = position;
+};
+
+const updateDiapositiva = (number) => {
+  attualeDiapositiva.value = number;
+};
+
+const updateMaxDiapositiva = (number) => {
+  maxDiapositiva.value = number;
 };
 </script>
 
@@ -31,8 +42,12 @@ const toggleDropdown = ({ type, position }) => {
     <div class="menu">
       <MenuLibreOfficeImpress @toggle-dropdown="toggleDropdown" />
       <div id="dropdownsWrapper">
-        <FileDropdown v-if="showDropdown === 'File'"
+        <FileDropdown @toggle-dropdown="toggleDropdown" v-if="showDropdown === 'File'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        <div id="dropdownsFileWrapper">
+          <DocumentiRecentiDropdown v-if="showDropdown === 'DocumentiRecenti'"
+            :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+        </div>
         <ModificaDropdown v-if="showDropdown === 'Modifica'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
         <VisualizzaDropdown v-if="showDropdown === 'Visualizza'"
@@ -55,14 +70,17 @@ const toggleDropdown = ({ type, position }) => {
       <MenuIconLibreOfficeImpress />
     </div>
     <div id="mainWrapper">
-      <DiapositiveMenu />
-      <button class="nascondi"></button>
-      <div><img src="./assets/Impress/file_SenzaNome1/diapositiva1.png" /></div>
-      <button class="nascondi" style="transform: rotate(180deg);"></button>
+      <DiapositiveMenu_IlSistemaSolare @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <div style="display:flex; align-items: center;">
+        <Nascondi />
+        <img src="./assets/Impress/file_SenzaNome1/diapositiva1.png" />
+        <Nascondi style="transform: rotate(180deg);" />
+      </div>
       <MenuLaterale />
     </div>
-    <div>
-      <img style="  border-top: 1px solid #b0b0b0;" src="./assets/Impress/footer.png" />
+    <div style="display: flex; margin: none; align-items: center; height: 22px; border-top: 1px solid #c4c4c4;">
+      <p style="margin: none; margin-left: 7px; font-size:12px; margin-right:5px;">Diapositiva {{ diapositivaNumber }} di {{ maxDiapositiva }}</p>
+      <img src="./assets/Impress/footer.png" />
     </div>
   </div>
 </template>
@@ -98,22 +116,4 @@ hr {
   width: 100%;
   justify-content: space-around;
 }
-
-.nascondi {
-  border: none;
-  background-image: url("./assets/Impress/nascondi.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 3px;
-}
-
-.nascondi:hover {
-  border: none;
-  background-image: url("./assets/Impress/nascondi-hover.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 3px;
-}
-
-
 </style>

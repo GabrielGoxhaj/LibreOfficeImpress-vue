@@ -2,7 +2,7 @@
     <div class="titleBar">
         <div class="title">
             <img src="../assets/Impress/icons/icon-libreofficeimpress.png" />
-            <span> Senza nome 1 — LibreOffice Impress</span>
+            <span> {{ title_pptx }} — LibreOffice Impress</span>
         </div>
         <div class="buttons">
             <div class="restore" id="impressRestore"><img src="../assets/Impress/icons/icon-restore.svg" /></div>
@@ -10,6 +10,21 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            title_pptx: 'Senza nome 1'
+        };
+    },
+    methods: {
+        update_title(title) {
+            this.title_pptx = title;
+        }
+    }
+};
+</script>
 
 <style scoped>
 .title {
@@ -66,5 +81,6 @@
     margin: auto auto;
     text-align: center;
     transition: 0.2s;
+    cursor: default;
 }
 </style>
