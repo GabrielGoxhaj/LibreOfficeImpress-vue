@@ -17,7 +17,18 @@ import DiapositiveMenu_IlSistemaSolare from './components/IlSistemaSolare/Diapos
 import MenuLaterale from './components/MenuLaterale.vue';
 import Nascondi from './components/Nascondi.vue';
 import DocumentiRecentiDropdown from './components/MenuDropdowns/FileDropdowns/DocumentiRecentiDropdown.vue';
+import DiapositivaCurrent_IlSistemaSolare from './components/IlSistemaSolare/DiapositivaCurrent_IlSistemaSolare.vue';
 
+const diapositivaNumber = ref(1);
+const maxDiapositiva = ref(1);
+
+const updateDiapositiva = (diapositiva) => {
+  diapositivaNumber.value = diapositiva;
+};
+
+const updateMaxDiapositiva = (max) => {
+  maxDiapositiva.value = max;
+};
 
 const showDropdown = ref(null);
 const dropdownPosition = ref({ top: 0, left: 0 });
@@ -25,14 +36,6 @@ const dropdownPosition = ref({ top: 0, left: 0 });
 const toggleDropdown = ({ type, position }) => {
   showDropdown.value = showDropdown.value === type ? null : type;
   dropdownPosition.value = position;
-};
-
-const updateDiapositiva = (number) => {
-  attualeDiapositiva.value = number;
-};
-
-const updateMaxDiapositiva = (number) => {
-  maxDiapositiva.value = number;
 };
 </script>
 
@@ -44,10 +47,10 @@ const updateMaxDiapositiva = (number) => {
       <div id="dropdownsWrapper">
         <FileDropdown @toggle-dropdown="toggleDropdown" v-if="showDropdown === 'File'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-        <div id="dropdownsFileWrapper">
+        <!-- <div id="dropdownsFileWrapper">
           <DocumentiRecentiDropdown v-if="showDropdown === 'DocumentiRecenti'"
             :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-        </div>
+        </div> -->
         <ModificaDropdown v-if="showDropdown === 'Modifica'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
         <VisualizzaDropdown v-if="showDropdown === 'Visualizza'"
@@ -73,13 +76,13 @@ const updateMaxDiapositiva = (number) => {
       <DiapositiveMenu_IlSistemaSolare @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
       <div style="display:flex; align-items: center;">
         <Nascondi />
-        <img src="./assets/Impress/file_SenzaNome1/diapositiva1.png" />
+        <DiapositivaCurrent_IlSistemaSolare :diapositivaNumber="diapositivaNumber" />
         <Nascondi style="transform: rotate(180deg);" />
       </div>
       <MenuLaterale />
     </div>
     <div style="display: flex; margin: none; align-items: center; height: 22px; border-top: 1px solid #c4c4c4;">
-      <p style="margin: none; margin-left: 7px; font-size:12px; margin-right:5px;">Diapositiva {{ diapositivaNumber }} di {{ maxDiapositiva }}</p>
+      <p style="margin: none; margin-left: 7px; font-size:12px; margin-right:4px;">Diapositiva {{diapositivaNumber}} di {{maxDiapositiva}}</p>
       <img src="./assets/Impress/footer.png" />
     </div>
   </div>
