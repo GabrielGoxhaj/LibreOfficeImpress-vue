@@ -1,18 +1,13 @@
 <template>
     <div class="menuLaterale">
-        <!-- <div class="icons"> -->
-        <button><img src="../assets/Impress/icons/icons_menu_laterale/impostazioni.png" </button>
-            <button><img src="../assets/Impress/icons/icons_menu_laterale/proprietà.png" </button>
-                <button><img src="../assets/Impress/icons/icons_menu_laterale/galleria.png" </button>
-                    <button><img src="../assets/Impress/icons/icons_menu_laterale/navigatore.png" </button>
-                        <button><img src="../assets/Impress/icons/icons_menu_laterale/forme.png" </button>
-                            <button><img src="../assets/Impress/icons/icons_menu_laterale/cambio-diapositiva.png"
-                                    </button>
-                                <button><img src="../assets/Impress/icons/icons_menu_laterale/animazione.png" </button>
-                                    <button><img
-                                            src="../assets/Impress/icons/icons_menu_laterale/diapositive-schema.png"
-                                            </button>
-                                        <!-- </div> -->
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/impostazioni.png"></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/proprietà.png"></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/galleria.png"></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/navigatore.png"></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/forme.png" ></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/cambio-diapositiva.png"></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/animazione.png"></button>
+        <button><img src="../assets/Impress/icons/icons_menu_laterale/diapositive-schema.png"></button>
     </div>
 </template>
 

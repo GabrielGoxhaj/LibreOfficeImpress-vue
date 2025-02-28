@@ -1,25 +1,12 @@
 <script>
 import menu01 from "../../assets/Impress/file_IlSistemaSolare/menu-01.png";
-import menu02 from "../../assets/Impress/file_IlSistemaSolare/menu-02.png";
-import menu03 from "../../assets/Impress/file_IlSistemaSolare/menu-03.png";
-import menu04 from "../../assets/Impress/file_IlSistemaSolare/menu-04.png";
-import menu05 from "../../assets/Impress/file_IlSistemaSolare/menu-05.png";
-import menu06 from "../../assets/Impress/file_IlSistemaSolare/menu-06.png";
-import menu07 from "../../assets/Impress/file_IlSistemaSolare/menu-07.png";
 
 export default {
     data() {
         return {
             images: [
                 { src: menu01, selected: true },
-                { src: menu02, selected: false },
-                { src: menu03, selected: false },
-                { src: menu04, selected: false },
-                { src: menu05, selected: false },
-                { src: menu06, selected: false },
-                { src: menu07, selected: false }
-            ],
-            title_pptx: 'Il Sistema Solare.pptx',
+        ]
         };
     },
     methods: {
@@ -32,7 +19,6 @@ export default {
     },
     mounted() {
         this.$emit('update-max-diapositiva', this.images.length);
-        this.$emit('update-title', this.title_pptx);
     }
 }
 </script>
@@ -53,7 +39,7 @@ export default {
 .diapositiveMenu {
     width: 168px;
     border-right: 1px solid #b0b0b0;
-    height: 410px;
+    max-height: 410px;
 }
 
 .title {

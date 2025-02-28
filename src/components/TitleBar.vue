@@ -13,17 +13,13 @@
 
 <script>
 export default {
-    data() {
-        return {
-            title_pptx: 'Senza nome 1'
-        };
-    },
-    methods: {
-        update_title(title) {
-            this.title_pptx = title;
+    props: {
+        title_pptx: {
+            type: String,
+            required: true
         }
     }
-};
+}
 </script>
 
 <style scoped>

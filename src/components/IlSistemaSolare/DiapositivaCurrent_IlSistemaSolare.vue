@@ -29,15 +29,15 @@ export default {
                 { src: diapositiva04 },
                 { src: diapositiva05 },
                 { src: diapositiva06 },
-                { src: diapositiva07 }
-            ]
+                { src: diapositiva07 },
+            ],
         };
     },
     computed: {
         currentImage() {
             return this.images[this.diapositivaNumber - 1];
         }
-    }
+    },
 }
 </script>
 

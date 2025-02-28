@@ -21,6 +21,8 @@ import DiapositivaCurrent_IlSistemaSolare from './components/IlSistemaSolare/Dia
 
 const diapositivaNumber = ref(1);
 const maxDiapositiva = ref(1);
+const title_pptx = ref('');
+const currentPPTX = ref('');
 
 const updateDiapositiva = (diapositiva) => {
   diapositivaNumber.value = diapositiva;
@@ -28,6 +30,24 @@ const updateDiapositiva = (diapositiva) => {
 
 const updateMaxDiapositiva = (max) => {
   maxDiapositiva.value = max;
+};
+
+const updateTitle = (title) => {
+  title_pptx.value = title;
+};
+
+const changePPTX = (pptx) => {
+  currentPPTX.value = pptx;
+};
+
+const isDiapositiveMenuVisible = ref(true);
+const hideDiapositiveMenu = () => {
+  isDiapositiveMenuVisible.value = !isDiapositiveMenuVisible.value;
+};
+
+const isMenuLateraleVisible = ref(true);
+const hideMenuLaterale = () => {
+  isMenuLateraleVisible.value = !isMenuLateraleVisible.value;
 };
 
 const showDropdown = ref(null);
@@ -41,7 +61,7 @@ const toggleDropdown = ({ type, position }) => {
 
 <template>
   <div class="libreOfficeImpress">
-    <TitleBar />
+    <TitleBar :title_pptx="title_pptx"/>
     <div class="menu">
       <MenuLibreOfficeImpress @toggle-dropdown="toggleDropdown" />
       <div id="dropdownsWrapper">
@@ -73,19 +93,22 @@ const toggleDropdown = ({ type, position }) => {
       <MenuIconLibreOfficeImpress />
     </div>
     <div id="mainWrapper">
-      <DiapositiveMenu_IlSistemaSolare @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
       <div style="display:flex; align-items: center;">
-        <Nascondi />
-        <DiapositivaCurrent_IlSistemaSolare :diapositivaNumber="diapositivaNumber" />
-        <Nascondi style="transform: rotate(180deg);" />
+      <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 84.26px'"/> <!-- width DiapositiveMenu 168.52px -->
+      <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
+      <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
-      <MenuLaterale />
+      <MenuLaterale v-if="isMenuLateraleVisible" />
     </div>
-    <div style="display: flex; margin: none; align-items: center; height: 22px; border-top: 1px solid #c4c4c4;">
-      <p style="margin: none; margin-left: 7px; font-size:12px; margin-right:4px;">Diapositiva {{diapositivaNumber}} di {{maxDiapositiva}}</p>
+    <div class="footer">
+      <p class="numberDiapositiva">Diapositiva {{diapositivaNumber}} di {{maxDiapositiva}}</p>
       <img src="./assets/Impress/footer.png" />
     </div>
   </div>
+
+  <button>Select Il Sistema Solare.pptx</button>
+  <button>Select SenzaNome1</button>
 </template>
 
 <style scoped>
@@ -117,6 +140,22 @@ hr {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  max-height: 410px;
+}
+
+.footer {
+  display: flex;
+  margin: none;
+  align-items: center;
+  height: 22px;
+  border-top: 1px solid #c4c4c4;
+}
+
+.numberDiapositiva {
+  margin: none;
+  margin-left: 7px;
+  font-size: 12px;
+  margin-right: 4px;
+  margin-bottom: 9px;
 }
 </style>
