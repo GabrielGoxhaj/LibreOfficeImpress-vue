@@ -1,28 +1,28 @@
 <template>
     <div id="dropdownModifica" class="dropdownModifica" :style="style">
-        <a>Annulla</a>
-        <a>Ripristina</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-annulla.png">Annulla</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-ripristina.png">Ripristina</div></a>
         <hr />
-        <a>Taglia</a>
-        <a>Copia</a>
-        <a>Incolla</a>
-        <a>Incolla speciale</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-taglia.png">Taglia</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-copia.png">Copia</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-incolla.png">Incolla</div></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-incolla-speciale.png">Incolla speciale</div><g>&#x1F782;</g></a>
         <hr />
-        <a>Duplica</a>
-        <a>Seleziona tutto</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-duplica.png">Duplica</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-seleziona.png">Seleziona tutto</div></a>
         <hr />
-        <a>Trova...</a>
-        <a>Trova e sostituisci...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-trova.png">Trova...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Trova e sostituisci...</div></a>
         <hr />
-        <a>Toggle Point Edit Mode</a>
-        <a>Punti di incollaggio</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-toggle.png">Toggle Point Edit Mode</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/modifica/modifica-punti.png">Punti di incollaggio</div></a>
         <hr />
-        <a>Collegamento ipertestuale</a>
-        <a>Campi...</a>
-        <a>Collegamenti esterni...</a>
-        <a>Oggetto OLE</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Collegamento ipertestuale</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Campi...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Collegamenti esterni...</div></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Oggetto OLE</div><g>&#x1F782;</g></a>
         <hr />
-        <a>Modo Modifica</a>
+        <a class="disabled"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Modo Modifica</div></a>
     </div>
 </template>
 
@@ -79,12 +79,20 @@ export default {
     max-height: 16px;
 }
 
-.dropdownModifica a:hover {
+.dropdownModifica a:hover:not(.disabled) {
     background-color: #95cdfb;
 }
 
 hr {
     margin: 0;
     color: #d7d7d7;
+}
+
+.dropdownModifica a:hover.disabled {
+    background-color: #ececec;
+}
+
+a.disabled {
+    color: #808080;
 }
 </style>

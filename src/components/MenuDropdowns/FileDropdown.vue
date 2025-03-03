@@ -1,7 +1,7 @@
 <template>
     <div id="dropdownFile" class="dropdownFile" :style="style">
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-nuovo.png">Nuovo</div><g>&#x1F782;</g></a>
-        <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-apri.png"> Apri...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-apri.png">Apri...</div></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Apri in remoto...</div></a>
         <a @click="dropdownToggle($event, 'DocumentiRecenti')" style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Chiudi</div></a>
@@ -9,8 +9,8 @@
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Procedure guidate</div><g>&#x1F782;</g></a>
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-modelli.png">Modelli</div><g>&#x1F782;</g></a>
         <hr />
-        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Ricarica</div></a>
-        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Versioni</div></a>
+        <a class="disabled"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Ricarica</div></a>
+        <a class="disabled"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Versioni</div></a>
         <hr />
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-salva.png">Salva</div></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-salva-con-nome.png">Salva con nome...</div></a>
@@ -99,12 +99,20 @@ export default {
     max-height: 16px;
 }
 
-.dropdownFile a:hover {
+.dropdownFile a:hover:not(.disabled) {
     background-color: #95cdfb;
 }
 
 hr {
     margin: 0;
     color: #d7d7d7;
+}
+
+.dropdownFile a:hover.disabled {
+    background-color: #ececec;
+}
+
+a.disabled {
+    color: #808080;
 }
 </style>

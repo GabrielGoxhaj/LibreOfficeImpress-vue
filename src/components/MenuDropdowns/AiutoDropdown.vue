@@ -75,12 +75,20 @@ export default {
     max-height: 16px;
 }
 
-.dropdownAiuto a:hover {
+.dropdownAiuto a:hover:not(.disabled) {
     background-color: #95cdfb;
 }
 
 hr {
     margin: 0;
     color: #d7d7d7;
+}
+
+.dropdownAiuto a:hover.disabled {
+    background-color: #ececec;
+}
+
+a.disabled {
+    color: #808080;
 }
 </style>

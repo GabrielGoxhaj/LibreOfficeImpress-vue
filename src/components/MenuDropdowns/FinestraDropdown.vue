@@ -60,12 +60,20 @@ export default {
     max-height: 16px;
 }
 
-.dropdownFinestra a:hover {
+.dropdownFinestra a:hover:not(.disabled) {
     background-color: #95cdfb;
 }
 
 hr {
     margin: 0;
     color: #d7d7d7;
+}
+
+.dropdownFinestra a:hover.disabled {
+    background-color: #ececec;
+}
+
+a.disabled {
+    color: #808080;
 }
 </style>

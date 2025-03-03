@@ -41,7 +41,7 @@ export default {
     <div class="diapositiveMenu">
         <div class="title">
             <p style="font-weight: 500;font-size: 11px;">Diapositive</p>
-            <p style="font-size: 16px;">&times;</p>
+            <p style="font-size: 16px;" @click="hideDiapositiveMenu">&times;</p>
         </div>
         <div class="diapositivaSelector">
             <img v-for="(image, index) in images" :key="index" :class="{ selected: image.selected }" @click="selectDiapositiva(index)" :src="image.src" />

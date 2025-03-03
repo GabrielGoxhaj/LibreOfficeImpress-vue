@@ -85,12 +85,20 @@ export default {
     max-height: 16px;
 }
 
-.dropdownDiapositiva a:hover {
+.dropdownDiapositiva a:hover:not(.disabled) {
     background-color: #95cdfb;
 }
 
 hr {
     margin: 0;
     color: #d7d7d7;
+}
+
+.dropdownDiapositiva a:hover.disabled {
+    background-color: #ececec;
+}
+
+a.disabled {
+    color: #808080;
 }
 </style>
