@@ -2,7 +2,7 @@
     <div id="dropdownDiapositiva" class="dropdownDiapositiva" :style="style">
         <a>Nuova diapositiva</a>
         <a>Duplica diapositiva</a>
-        <a>Inserisci diapositiva da file...</a>
+        <a>Inserisci diapositiva da Diapositiva...</a>
         <a>Layout</a>
         <a>Elimina diapositiva</a>
         <hr />
@@ -63,9 +63,11 @@ export default {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 9pt;
     display: block;
-    padding-left: 5px;
-    padding-top: 1px;
-    padding-bottom: 4px;
+    margin-top: 1px;
+    margin-left: 2px;
+    padding-left: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     padding-right: 10px;
     transition: 0.1s;
     cursor: default;
@@ -78,13 +80,13 @@ export default {
 }
 
 .dropdownDiapositiva a div img {
-    margin-right: 5px;
+    margin-right: 14px;
     max-width: 16px;
     max-height: 16px;
 }
 
 .dropdownDiapositiva a:hover {
-    background-color: #91C9F7;
+    background-color: #95cdfb;
 }
 
 hr {

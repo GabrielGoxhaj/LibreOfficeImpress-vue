@@ -94,7 +94,7 @@ const toggleDropdown = ({ type, position }) => {
       <MenuIconLibreOfficeImpress />
     </div>
     <div id="mainWrapper">
-      <DiapositiveMenu_IVA v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
       <div style="display:flex; align-items: center;">
       <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
       <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />

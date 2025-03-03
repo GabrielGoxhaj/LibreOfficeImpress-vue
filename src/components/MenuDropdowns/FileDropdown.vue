@@ -2,32 +2,32 @@
     <div id="dropdownFile" class="dropdownFile" :style="style">
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-nuovo.png">Nuovo</div><g>&#x1F782;</g></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-apri.png"> Apri...</div></a>
-        <a>Apri in remoto...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Apri in remoto...</div></a>
         <a @click="dropdownToggle($event, 'DocumentiRecenti')" style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
-        <a>Chiudi</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Chiudi</div></a>
         <hr />
-        <a style="display: flex; justify-content: space-between;">Procedure guidate<g>&#x1F782;</g></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Procedure guidate</div><g>&#x1F782;</g></a>
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-modelli.png">Modelli</div><g>&#x1F782;</g></a>
         <hr />
-        <a>Ricarica</a>
-        <a>Versioni</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Ricarica</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Versioni</div></a>
         <hr />
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-salva.png">Salva</div></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-salva-con-nome.png">Salva con nome...</div></a>
-        <a>Salva in remoto...</a>
-        <a>Salva una copia...</a>
-        <a>Salva tutto</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Salva in remoto...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Salva una copia...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Salva tutto</div></a>
         <hr />
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-esporta.png">Esporta</div></a>
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-esporta.png">Esporta come</div><g>&#x1F782;</g></a>
-        <a style="display: flex; justify-content: space-between;">Invia<g>&#x1F782;</g></a>
-        <a>Anteprima nel browser web</a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Invia</div><g>&#x1F782;</g></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Anteprima nel browser web</div></a>
         <hr />
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-stampa.png">Stampa</div></a>
-        <a>Impostazioni stampante...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Impostazioni stampante...</div></a>
         <hr />
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-proprietà.png">Proprietà</div></a>
-        <a style="display: flex; justify-content: space-between;">Firme digitali<g>&#x1F782;</g></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Firme digitali</div><g>&#x1F782;</g></a>
         <hr />     
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-esci.png">Esci da Libre Office</div></a>
     </div>
@@ -77,9 +77,11 @@ export default {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 9pt;
     display: block;
-    padding-left: 5px;
-    padding-top: 1px;
-    padding-bottom: 4px;
+    margin-top: 1px;
+    margin-left: 2px;
+    padding-left: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     padding-right: 10px;
     transition: 0.1s;
     cursor: default;
@@ -92,13 +94,13 @@ export default {
 }
 
 .dropdownFile a div img {
-    margin-right: 5px;
-    max-width: 16px;
+    margin-right: 14px;
+    width: 16px;
     max-height: 16px;
 }
 
 .dropdownFile a:hover {
-    background-color: #91C9F7;
+    background-color: #95cdfb;
 }
 
 hr {
