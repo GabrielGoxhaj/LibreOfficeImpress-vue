@@ -1,12 +1,12 @@
 <template>
     <div id="dropdownPresentazione" class="dropdownPresentazione" :style="style">
-        <a>Inizia dalla prima diapositiva</a>
-        <a>Inizia dalla diapositiva corrente</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/presentazione/presentazione-prima.png">Inizia dalla prima diapositiva</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/presentazione/presentazione-corrente.png">Inizia dalla diapositiva corrente</div></a>
         <hr />
-        <a>Presentazione cronometrata</a>
-        <a>Presentazione personalizzata...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/presentazione/presentazione-cronometrata.png">Presentazione cronometrata</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/presentazione/presentazione-personalizzata.png">Presentazione personalizzata...</div></a>
         <hr />
-        <a>Impostazioni presentazione...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/presentazione/presentazione-impostazioni.png">Impostazioni presentazione...</div></a>
     </div>
 </template>
 
