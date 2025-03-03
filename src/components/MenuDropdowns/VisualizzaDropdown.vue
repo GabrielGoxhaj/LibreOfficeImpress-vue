@@ -1,39 +1,38 @@
 <template>
   <div id="dropdownVisualizza" class="dropdownVisualizza" :style="style">
-    <a>Normale</a>
-    <a>Struttura</a>
-    <a>Note</a>
-    <a>Ordine diapositive</a>
-    <a>Diapositiva schema</a>
-    <a>Note dello schema</a>
-    <a>Stampato dello schema</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-normale.png">Normale</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-struttura.png">Struttura</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-note.png">Note</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-ordine.png">Ordine diapositive</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-diapositiva-schema.png">Diapositiva schema</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-note-schema.png">Note dello schema</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-stampato.png">Stampato dello schema</div></a>
     <hr />
-    <a>Interfaccia Utente</a>
-    <a>Barre degli strumenti</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Interfaccia Utente</div></a>
+    <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Barre degli strumenti</div><g>&#x1F782;</g></a>
     <hr />
-    <a>Barra di stato</a>
-    <a>Pannello diapositive</a>
-    <a>Barra a schede delle viste</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Barra di stato</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Pannello diapositive</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Barra a schede delle viste</div></a>
     <hr />
-    <a>Righelli</a>
-    <a>Griglia e linee guida</a>
-    <a>Linee guida</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-righelli.png">Righelli</div></a>
+    <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-griglia.png">Griglia e linee guida</div><g>&#x1F782;</g></a>
+    <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Linee guida</div><g>&#x1F782;</g></a>
     <hr />
-    <a>Commenti</a>
-    <a>Colore/Toni di grigio</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-commenti.png">Commenti</div></a>
+    <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Colore/Toni di grigio</div><g>&#x1F782;</g></a>
     <hr />
-    <a>Barra laterale</a>
-    <a>Layout diapositiva</a>
-    <a>Cambio diapositiva</a>
-    <a>Animazione</a>
-    <a>Stili</a>
-    <a>Galleria</a>
-    <a>Navigatore</a>
-    <a>Barra dei colori</a>
-    <a>Barra dei colori</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-barra.png">Barra laterale</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-layout.png">Layout diapositiva</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-cambio.png">Cambio diapositiva</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-animazione.png">Animazione</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-stili.png">Stili</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-galleria.png">Galleria</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-navigatore.png">Navigatore</div></a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Barra dei colori</div></a>
     <hr />
-    <a>Sposta</a>
-    <a>Zoom</a>
+    <a><div><img src="../../assets/Impress/icons/icons_dropdown/visualizza/visualizza-sposta.png">Sposta</div></a>
+    <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Zoom</div><g>&#x1F782;</g></a>
   </div>
 </template>
 
