@@ -1,28 +1,28 @@
 <template>
     <div id="dropdownStrumenti" class="dropdownStrumenti" :style="style">
-        <a>Controllo ortografico...</a>
-        <a>Controllo ortografico automatico</a>
-        <a>Sinonimi...</a>
-        <a>Lingua</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-controllo.png">Controllo ortografico...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-controllo-auto.png">Controllo ortografico automatico</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Sinonimi...</div></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-lingua.png">Lingua</div><g>&#x1F782;</g></a>
         <hr />
-        <a>Opzioni di correzione automatica...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-opzioni-correzione.png">Opzioni di correzione automatica...</div></a>
         <hr />
-        <a>Oscura</a>
-        <a>Oscura in automatico</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Oscura</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Oscura in automatico</div></a>
         <hr />
-        <a>Minimizza presentazione...</a>
-        <a>Mappa immagine</a>
-        <a>Sostituzione colore</a>
-        <a>Lettore multimediale</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-minimizza.png">Minimizza presentazione...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-mappa.png">Mappa immagine</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-sostituzione.png">Sostituzione colore</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-lettore.png">Lettore multimediale</div></a>
         <hr />
-        <a>Formulari</a>
-        <a>Macro</a>
-        <a>Strumenti per lo sviluppo</a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Formulari</div><g>&#x1F782;</g></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-macro.png">Macro</div><g>&#x1F782;</g></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-strumenti.png">Strumenti per lo sviluppo</div></a>
         <hr />
-        <a>Impostazioni filtro XML...</a>
-        <a>Estensioni...</a>
-        <a>Personalizza...</a>
-        <a>Opzioni...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-xml.png">Impostazioni filtro XML...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Estensioni...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Personalizza...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/strumenti/strumenti-opzioni.png">Opzioni...</div></a>
     </div>
 </template>
 
