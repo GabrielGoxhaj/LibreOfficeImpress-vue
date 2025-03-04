@@ -1,34 +1,34 @@
 <template>
     <div id="dropdownDiapositiva" class="dropdownDiapositiva" :style="style">
-        <a>Nuova diapositiva</a>
-        <a>Duplica diapositiva</a>
-        <a>Inserisci diapositiva da Diapositiva...</a>
-        <a>Layout</a>
-        <a>Elimina diapositiva</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-nuova-diapositiva.png">Nuova diapositiva</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-duplica.png">Duplica diapositiva</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Inserisci diapositiva da Diapositiva...</div></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Layout</div><g>&#x1F782;</g></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-elimina-diapositiva.png">Elimina diapositiva</div></a>
         <hr />
-        <a>Salva immagine di sfondo</a>
-        <a>Imposta immagine di sfondo...</a>
-        <a>Proprietà della diapositiva...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-salva.png">Salva immagine di sfondo</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-imposta.png">Imposta immagine di sfondo...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-proprietà.png">Proprietà della diapositiva...</div></a>
         <hr />
-        <a>Cambia schema diapositiva...</a>
-        <a>Ruota schema</a>
-        <a>Elimina schema</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-cambia-schema.png">Cambia schema diapositiva...</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-nuovo-schema.png">Nuovo schema</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-elimina-schema.png">Elimina schema</div></a>
         <hr />
-        <a>Sfondo dello schema</a>
-        <a>Oggetti dello schema</a>
-        <a>Elementi dello schema...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-sfondo.png">Sfondo dello schema</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-oggetti.png">Oggetti dello schema</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-elementi.png">Elementi dello schema...</div></a>
         <hr />
-        <a>Mostra diapositiva</a>
-        <a>Nascondi diapositiva</a>
-        <a>Rinomina la diapositiva...</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-mostra.png">Mostra diapositiva</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-nascondi.png">Nascondi diapositiva</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-rinomina.png">Rinomina la diapositiva...</div></a>
         <hr />
-        <a>Vai all'ultima diapositiva modificata</a>
-        <a>Sposta</a>
-        <a>Naviga</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Vai all'ultima diapositiva modificata</div></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Sposta</div><g>&#x1F782;</g></a>
+        <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Naviga</div><g>&#x1F782;</g></a>
         <hr />
-        <a>Diapositiva sommario</a>
-        <a>Pagina da struttura</a>
-        <a>Cambio diapositiva</a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Diapositiva sommario</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Pagina da struttura</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/diapositiva/diapositiva-cambio-diapositiva.png">Cambio diapositiva</div></a>
     </div>
 </template>
 
