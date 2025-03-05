@@ -19,6 +19,7 @@ import Nascondi from './components/Nascondi.vue';
 import DocumentiRecentiDropdown from './components/MenuDropdowns/FileDropdowns/DocumentiRecentiDropdown.vue';
 import DiapositivaCurrent_IlSistemaSolare from './components/IlSistemaSolare/DiapositivaCurrent_IlSistemaSolare.vue';
 import DiapositiveMenu_IVA from './components/IVA/DiapositiveMenu_IVA.vue';
+import Proprietà from './components/MenuLaterale/Proprietà.vue';
 
 const diapositivaNumber = ref(1);
 const maxDiapositiva = ref(1);
@@ -101,6 +102,7 @@ const toggleDropdown = ({ type, position }) => {
       <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
       <MenuLaterale v-if="isMenuLateraleVisible" />
+      <Proprietà />
     </div>
     <div class="footer">
       <p class="numberDiapositiva">Diapositiva {{diapositivaNumber}} di {{maxDiapositiva}}</p>
