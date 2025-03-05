@@ -130,7 +130,8 @@ summary {
     margin-bottom: 1px;
     font-weight: 500;
     font-size: 12px;
-    cursor: default;
+    cursor: pointer;
+    list-style: none;
 }
 
 p {
@@ -144,5 +145,15 @@ label {
     font-size: 12px;
     cursor: default;
     margin-right: 8px;
+}
+
+summary::before {
+  content: url("../../assets/Impress/icons/icons_menu_laterale/open.png");
+  margin-right: 5px;
+}
+
+details[open] summary::before {
+  content: url("../../assets/Impress/icons/icons_menu_laterale/close.png");
+  margin-right: 5px;
 }
 </style>

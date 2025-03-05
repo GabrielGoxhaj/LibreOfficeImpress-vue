@@ -54,4 +54,12 @@ p {
     background-color: #e4f2fe;
     cursor: default;
 }
+
+summary::before {
+  content: url("../../assets/Impress/icons/icons_menu_laterale/open.png"); /* Icona di apertura */
+}
+
+details[open] summary::before {
+  content: url("../../assets/Impress/icons/icons_menu_laterale/close.png");; /* Icona di chiusura */
+}
 </style>
