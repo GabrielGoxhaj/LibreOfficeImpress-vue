@@ -5,13 +5,16 @@
 </template>
 
 <script>
-// import diapositiva01 from "../../assets/Impress/file_IVA/diapositiva-01.png";
-// import diapositiva02 from "../../assets/Impress/file_IVA/diapositiva-02.png";
-// import diapositiva03 from "../../assets/Impress/file_IVA/diapositiva-03.png";
-// import diapositiva04 from "../../assets/Impress/file_IVA/diapositiva-04.png";
-// import diapositiva05 from "../../assets/Impress/file_IVA/diapositiva-05.png";
-// import diapositiva06 from "../../assets/Impress/file_IVA/diapositiva-06.png";
-// import diapositiva07 from "../../assets/Impress/file_IVA/diapositiva-07.png";
+import diapositiva01 from "../../assets/Impress/file_IVA/diapositiva-01.png";
+import diapositiva02 from "../../assets/Impress/file_IVA/diapositiva-02.png";
+import diapositiva03 from "../../assets/Impress/file_IVA/diapositiva-03.png";
+import diapositiva04 from "../../assets/Impress/file_IVA/diapositiva-04.png";
+import diapositiva05 from "../../assets/Impress/file_IVA/diapositiva-05.png";
+import diapositiva06 from "../../assets/Impress/file_IVA/diapositiva-06.png";
+import diapositiva07 from "../../assets/Impress/file_IVA/diapositiva-07.png";
+import diapositiva08 from "../../assets/Impress/file_IVA/diapositiva-08.png";
+import diapositiva09 from "../../assets/Impress/file_IVA/diapositiva-09.png";
+import diapositiva10 from "../../assets/Impress/file_IVA/diapositiva-10.png";
 
 export default {
     props: {
@@ -30,6 +33,9 @@ export default {
                 { src: diapositiva05 },
                 { src: diapositiva06 },
                 { src: diapositiva07 },
+                { src: diapositiva08 },
+                { src: diapositiva09 },
+                { src: diapositiva10 },
             ],
         };
     },

@@ -119,7 +119,7 @@ const closeDropdown = () => {
       <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
       
       <!-- View della diapositiva (IVA non ancora ultimato) -->
-      <!-- <DiapositivaCurrent_IVA style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
+      <DiapositivaCurrent_IVA v-if="title_pptx === 'IVA.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
       <DiapositivaCurrent_IlSistemaSolare v-if="title_pptx === 'Il Sistema Solare.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
       <DiapositivaCurrent_SenzaNome1 v-if="title_pptx === 'Senza Nome 1.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
       <DiapositivaCurrent_SocialMediaMarketing v-if="title_pptx === 'Social Media Marketing.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
@@ -182,5 +182,6 @@ hr {
   margin-right: 4px;
   margin-bottom: 9px;
   width: 87px;
+  cursor: default;
 }
 </style>
