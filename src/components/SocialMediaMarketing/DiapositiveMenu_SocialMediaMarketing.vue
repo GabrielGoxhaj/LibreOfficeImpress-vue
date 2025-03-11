@@ -1,13 +1,25 @@
 <script>
-import menu01 from "../../assets/Impress/file_SenzaNome1/menu-01.png";
+import menu01 from "../../assets/Impress/file_SocialMediaMarketing/menu-01.png";
+import menu02 from "../../assets/Impress/file_SocialMediaMarketing/menu-02.png";
+import menu03 from "../../assets/Impress/file_SocialMediaMarketing/menu-03.png";
+import menu04 from "../../assets/Impress/file_SocialMediaMarketing/menu-04.png";
+import menu05 from "../../assets/Impress/file_SocialMediaMarketing/menu-05.png";
+import menu06 from "../../assets/Impress/file_SocialMediaMarketing/menu-06.png";
+import menu07 from "../../assets/Impress/file_SocialMediaMarketing/menu-07.png";
 
 export default {
     data() {
         return {
             images: [
                 { src: menu01, selected: true },
-        ],
-        title_pptx: 'Senza Nome 1.pptx',
+                { src: menu02, selected: false },
+                { src: menu03, selected: false },
+                { src: menu04, selected: false },
+                { src: menu05, selected: false },
+                { src: menu06, selected: false },
+                { src: menu07, selected: false }
+            ],
+            title_pptx: 'Social Media Marketing.pptx',
         };
     },
     methods: {
@@ -20,6 +32,7 @@ export default {
     },
     mounted() {
         this.$emit('update-max-diapositiva', this.images.length);
+        this.$emit('update-title', this.title_pptx);
     }
 }
 </script>
@@ -28,7 +41,7 @@ export default {
     <div class="diapositiveMenu">
         <div class="title">
             <p style="font-weight: 500;font-size: 11px;">Diapositive</p>
-            <p style="font-size: 16px;">&times;</p>
+            <p style="font-size: 16px;" @click="hideDiapositiveMenu">&times;</p>
         </div>
         <div class="diapositivaSelector">
             <img v-for="(image, index) in images" :key="index" :class="{ selected: image.selected }" @click="selectDiapositiva(index)" :src="image.src" />
@@ -40,7 +53,7 @@ export default {
 .diapositiveMenu {
     width: 168px;
     border-right: 1px solid #b0b0b0;
-    max-height: 410px;
+    height: 410px;
 }
 
 .title {

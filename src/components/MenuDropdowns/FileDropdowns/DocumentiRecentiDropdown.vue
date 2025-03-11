@@ -1,8 +1,8 @@
 <template>
     <div id="dropdownDocumentiRecenti" class="dropdownDocumentiRecenti" :style="style">
-        <a @click="handleClick('Il Sistema Solare', 1)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>1</u>. Il Sistema Solare.pptx</div></a>
-        <a @click="handleClick('IVA', 2)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>2</u>. IVA.pptx</div></a>
-        <a @click="handleClick('Social Media Marketing', 3)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>3</u>. Social Media Marketing.pptx</div></a>
+        <a @click="handleClick('Il Sistema Solare.pptx', 1)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>1</u>. Il Sistema Solare.pptx</div></a>
+        <a @click="handleClick('IVA.pptx', 2)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>2</u>. IVA.pptx</div></a>
+        <a @click="handleClick('Social Media Marketing.pptx', 3)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>3</u>. Social Media Marketing.pptx</div></a>
     </div>
 </template>
 
