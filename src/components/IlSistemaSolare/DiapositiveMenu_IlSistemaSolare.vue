@@ -19,7 +19,7 @@ export default {
                 { src: menu06, selected: false },
                 { src: menu07, selected: false }
             ],
-            title_pptx: 'Il Sistema Solare.pptx',
+            title_pptx: 'Il Sistema Solare',
         };
     },
     methods: {

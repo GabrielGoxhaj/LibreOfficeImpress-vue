@@ -61,6 +61,10 @@ const toggleDropdown = ({ type, position }) => {
   dropdownPosition.value = position;
 };
 
+const closeDropdown = () => {
+  showDropdown.value = null;
+};
+
 </script>
 
 <template>
@@ -74,6 +78,7 @@ const toggleDropdown = ({ type, position }) => {
         <div id="dropdownsFileWrapper">
           <DocumentiRecentiDropdown v-if="showDropdown === 'DocumentiRecenti'"
             @update-title="updateTitle"
+            @toggle-dropdown="closeDropdown"
             :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
         </div>
         <ModificaDropdown v-if="showDropdown === 'Modifica'"

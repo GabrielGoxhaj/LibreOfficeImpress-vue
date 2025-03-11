@@ -1,8 +1,8 @@
 <template>
     <div id="dropdownDocumentiRecenti" class="dropdownDocumentiRecenti" :style="style">
-        <a @click="updateTitleAndClose('Il Sistema Solare', 1)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>1</u>. Il Sistema Solare.pptx</div></a>
-        <a @click="updateTitleAndClose('IVA', 2)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>2</u>. IVA.pptx</div></a>
-        <a @click="updateTitleAndClose('Social Media Marketing', 3)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>3</u>. Social Media Marketing.pptx</div></a>
+        <a @click="handleClick('Il Sistema Solare', 1)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>1</u>. Il Sistema Solare.pptx</div></a>
+        <a @click="handleClick('IVA', 2)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>2</u>. IVA.pptx</div></a>
+        <a @click="handleClick('Social Media Marketing', 3)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>3</u>. Social Media Marketing.pptx</div></a>
     </div>
 </template>
 
@@ -15,9 +15,15 @@ export default {
         }
     },
     methods: {
+        handleClick(title, diapositivaNumber) {
+            this.updateTitleAndClose(title, diapositivaNumber);
+            this.closeDropdown();
+        },
         updateTitleAndClose(title, diapositivaNumber) {
             this.$emit('update-title', title);
             this.$emit('update-diapositiva', diapositivaNumber);
+        },
+        closeDropdown() {
             this.$emit('toggle-dropdown', { type: null, position: { top: 0, left: 0 } });
         }
     }
