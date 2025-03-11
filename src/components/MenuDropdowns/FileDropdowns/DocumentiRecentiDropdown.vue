@@ -1,11 +1,10 @@
 <template>
     <div id="dropdownDocumentiRecenti" class="dropdownDocumentiRecenti" :style="style">
-        <a @click="$emit('update-title', 'Il Sistema Solare')"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>1</u>. Il Sistema Solare.pptx</div></a>
-        <a><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>2</u>. IVA.pptx</div></a>
-        <a><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>3</u>. Social Media Marketing.pptx</div></a>
+        <a @click="updateTitleAndClose('Il Sistema Solare', 1)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>1</u>. Il Sistema Solare.pptx</div></a>
+        <a @click="updateTitleAndClose('IVA', 2)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>2</u>. IVA.pptx</div></a>
+        <a @click="updateTitleAndClose('Social Media Marketing', 3)"><div><img src="../../../assets/Impress/icons/icons_dropdown/file/file-presentazione.png"> <u>3</u>. Social Media Marketing.pptx</div></a>
     </div>
 </template>
-  
 
 <script>
 export default {
@@ -13,6 +12,13 @@ export default {
         style: {
             type: Object,
             default: () => ({})
+        }
+    },
+    methods: {
+        updateTitleAndClose(title, diapositivaNumber) {
+            this.$emit('update-title', title);
+            this.$emit('update-diapositiva', diapositivaNumber);
+            this.$emit('toggle-dropdown', { type: null, position: { top: 0, left: 0 } });
         }
     }
 }

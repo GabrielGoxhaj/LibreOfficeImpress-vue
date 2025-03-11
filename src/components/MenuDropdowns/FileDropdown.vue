@@ -34,26 +34,25 @@
 </template>
 
 <script>
-
 export default {
     props: {
         style: {
             type: Object,
-            default: () =>({})
+            default: () => ({})
         }
     },
     methods: {
-    dropdownToggle(event, dropdownType) {
-      const buttonRect = event.target.getBoundingClientRect();
-      this.$emit('toggle-dropdown', {
-        type: dropdownType,
-        position: {
-          top: buttonRect.bottom,
-          left: buttonRect.left
+        dropdownToggle(event, dropdownType) {
+            const buttonRect = event.target.getBoundingClientRect();
+            this.$emit('toggle-dropdown', {
+                type: dropdownType,
+                position: {
+                    top: buttonRect.top,
+                    left: buttonRect.right
+                }
+            });
         }
-      });
     }
-  }
 }
 </script>
 
