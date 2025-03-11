@@ -12,6 +12,8 @@ import diapositiva04 from "../../assets/Impress/file_SocialMediaMarketing/diapos
 import diapositiva05 from "../../assets/Impress/file_SocialMediaMarketing/diapositiva-05.png";
 import diapositiva06 from "../../assets/Impress/file_SocialMediaMarketing/diapositiva-06.png";
 import diapositiva07 from "../../assets/Impress/file_SocialMediaMarketing/diapositiva-07.png";
+import diapositiva08 from "../../assets/Impress/file_SocialMediaMarketing/diapositiva-08.png";
+import diapositiva09 from "../../assets/Impress/file_SocialMediaMarketing/diapositiva-09.png";
 
 export default {
     props: {
@@ -30,6 +32,8 @@ export default {
                 { src: diapositiva05 },
                 { src: diapositiva06 },
                 { src: diapositiva07 },
+                { src: diapositiva08 },
+                { src: diapositiva09 },
             ],
         };
     },

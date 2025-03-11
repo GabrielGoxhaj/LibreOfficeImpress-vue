@@ -21,6 +21,11 @@ import DiapositivaCurrent_IlSistemaSolare from './components/IlSistemaSolare/Dia
 import DiapositiveMenu_IVA from './components/IVA/DiapositiveMenu_IVA.vue';
 import Proprietà from './components/MenuLaterale/Proprietà.vue';
 import Diapositive_Schema from './components/MenuLaterale/Diapositive_Schema.vue';
+import DiapositiveMenu_SenzaNome1 from './components/SenzaNome1/DiapositiveMenu_SenzaNome1.vue';
+import DiapositivaCurrent_SenzaNome1 from './components/SenzaNome1/DiapositivaCurrent_SenzaNome1.vue';
+import DiapositivaCurrent_IVA from './components/IVA/DiapositivaCurrent_IVA.vue';
+import DiapositiveMenu_SocialMediaMarketing from './components/SocialMediaMarketing/DiapositiveMenu_SocialMediaMarketing.vue';
+import DiapositivaCurrent_SocialMediaMarketing from './components/SocialMediaMarketing/DiapositivaCurrent_SocialMediaMarketing.vue';
 
 const diapositivaNumber = ref(1);
 const maxDiapositiva = ref(1);
@@ -103,10 +108,22 @@ const closeDropdown = () => {
       <MenuIconLibreOfficeImpress />
     </div>
     <div id="mainWrapper">
-      <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+
+      <!-- Menu Diapositive -->
+      <!-- <DiapositiveMenu_IVA v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
+      <!-- <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
+      <!-- <DiapositiveMenu_SenzaNome1 v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
+      <DiapositiveMenu_SocialMediaMarketing v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+
       <div style="display:flex; align-items: center;">
       <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
-      <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
+      
+      <!-- View della diapositiva -->
+      <!-- <DiapositivaCurrent_IVA style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
+      <!-- <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
+      <!-- <DiapositivaCurrent_SenzaNome1 style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
+      <DiapositivaCurrent_SocialMediaMarketing style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
+
       <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
       <MenuLaterale v-if="isMenuLateraleVisible" />

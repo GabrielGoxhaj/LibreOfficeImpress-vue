@@ -6,6 +6,9 @@ import menu04 from "../../assets/Impress/file_SocialMediaMarketing/menu-04.png";
 import menu05 from "../../assets/Impress/file_SocialMediaMarketing/menu-05.png";
 import menu06 from "../../assets/Impress/file_SocialMediaMarketing/menu-06.png";
 import menu07 from "../../assets/Impress/file_SocialMediaMarketing/menu-07.png";
+import menu08 from "../../assets/Impress/file_SocialMediaMarketing/menu-08.png";
+import menu09 from "../../assets/Impress/file_SocialMediaMarketing/menu-09.png";
+
 
 export default {
     data() {
@@ -17,7 +20,9 @@ export default {
                 { src: menu04, selected: false },
                 { src: menu05, selected: false },
                 { src: menu06, selected: false },
-                { src: menu07, selected: false }
+                { src: menu07, selected: false },
+                { src: menu08, selected: false },
+                { src: menu09, selected: false },
             ],
             title_pptx: 'Social Media Marketing.pptx',
         };
