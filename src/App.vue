@@ -29,7 +29,7 @@ import DiapositivaCurrent_SocialMediaMarketing from './components/SocialMediaMar
 
 const diapositivaNumber = ref(1);
 const maxDiapositiva = ref(1);
-const title_pptx = ref('');
+const title_pptx = ref('Senza Nome 1.pptx');
 const currentPPTX = ref('');
 
 const updateDiapositiva = (diapositiva) => {
@@ -109,20 +109,20 @@ const closeDropdown = () => {
     </div>
     <div id="mainWrapper">
 
-      <!-- Menu Diapositive (IVA non ancora ultimato) -->
-      <!-- <DiapositiveMenu_IVA v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
-      <!-- <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
-      <!-- <DiapositiveMenu_SenzaNome1 v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
-      <DiapositiveMenu_SocialMediaMarketing v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <!-- Menu Diapositive -->
+      <DiapositiveMenu_IVA v-if="isDiapositiveMenuVisible && title_pptx === 'IVA.pptx'" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible && title_pptx === 'Il Sistema Solare.pptx'" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <DiapositiveMenu_SenzaNome1 v-if="isDiapositiveMenuVisible && title_pptx === 'Senza Nome 1.pptx'" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
+      <DiapositiveMenu_SocialMediaMarketing v-if="isDiapositiveMenuVisible && title_pptx === 'Social Media Marketing.pptx'" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
 
       <div style="display:flex; align-items: center;">
       <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
       
       <!-- View della diapositiva (IVA non ancora ultimato) -->
       <!-- <DiapositivaCurrent_IVA style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
-      <!-- <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
-      <!-- <DiapositivaCurrent_SenzaNome1 style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
-      <DiapositivaCurrent_SocialMediaMarketing style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
+      <DiapositivaCurrent_IlSistemaSolare v-if="title_pptx === 'Il Sistema Solare.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
+      <DiapositivaCurrent_SenzaNome1 v-if="title_pptx === 'Senza Nome 1.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
+      <DiapositivaCurrent_SocialMediaMarketing v-if="title_pptx === 'Social Media Marketing.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
 
       <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
