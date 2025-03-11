@@ -109,7 +109,7 @@ const closeDropdown = () => {
     </div>
     <div id="mainWrapper">
 
-      <!-- Menu Diapositive -->
+      <!-- Menu Diapositive (IVA non ancora ultimato) -->
       <!-- <DiapositiveMenu_IVA v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
       <!-- <DiapositiveMenu_IlSistemaSolare v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
       <!-- <DiapositiveMenu_SenzaNome1 v-if="isDiapositiveMenuVisible" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" /> -->
@@ -118,7 +118,7 @@ const closeDropdown = () => {
       <div style="display:flex; align-items: center;">
       <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
       
-      <!-- View della diapositiva -->
+      <!-- View della diapositiva (IVA non ancora ultimato) -->
       <!-- <DiapositivaCurrent_IVA style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
       <!-- <DiapositivaCurrent_IlSistemaSolare style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
       <!-- <DiapositivaCurrent_SenzaNome1 style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" /> -->
@@ -133,14 +133,6 @@ const closeDropdown = () => {
       <img src="./assets/Impress/footer.png" />
     </div>
   </div>
-
-  <!-- Questi serviranno dopo per testare -->
-  <br />
-  <button>Il Sistema Solare.pptx</button>
-  <button>SenzaNome1</button>
-  <button>IVA.pptx</button>
-  <button>Social Media Marketing.pptx</button>
-  <!--  -->
 </template>
 
 <style scoped>
