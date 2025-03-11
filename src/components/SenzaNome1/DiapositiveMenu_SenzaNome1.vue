@@ -96,7 +96,7 @@ div > img:hover:not(.selected) {
     border-top:  1px solid #a0a0a0;
     margin-left: 3px;
     margin-right: 1px;
-    max-height: 380px;
+    height: 380px;
     overflow-y: auto;
     background-color: #ffffff;
 }
