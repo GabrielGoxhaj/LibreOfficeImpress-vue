@@ -122,8 +122,13 @@ const closeDropdown = () => {
 
       <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
-      <!-- <Proprietà /> -->
-      <MenuLaterale v-if="isMenuLateraleVisible" />
+
+      <!-- Wrapper Menu Laterale DX -->
+      <div>
+        <Proprietà style="display: none;" />
+        <Diapositive_Schema style="display: none;" />
+        <MenuLaterale v-if="isMenuLateraleVisible" />
+      </div>
     </div>
     <div class="footer">
       <p class="numberDiapositiva">Diapositiva {{diapositivaNumber}} di {{maxDiapositiva}}</p>
