@@ -1,7 +1,7 @@
 <template>
   <div class="menuIconLibreOfficeImpress">
     <div class="riga1">
-      <button><img src="../assets/Impress/icons/icons_menu/nuovo.png"></button><button class="dropdown" @mouseover="addHoverClass" @mouseout="removeHoverClass"><img src="../assets/Impress/icons/icons_menu/dropdown-icon.png"></button>
+      <button @click="changePPTX('Senza Nome 1.pptx')"><img src="../assets/Impress/icons/icons_menu/nuovo.png"></button><button @click="changePPTX('Senza Nome 1.pptx', 1)" class="dropdown" @mouseover="addHoverClass" @mouseout="removeHoverClass"><img src="../assets/Impress/icons/icons_menu/dropdown-icon.png"></button>
       <button><img src="../assets/Impress/icons/icons_menu/apri.png"></button><button class="dropdown" @mouseover="addHoverClass" @mouseout="removeHoverClass"><img src="../assets/Impress/icons/icons_menu/dropdown-icon.png"></button>
       <button><img src="../assets/Impress/icons/icons_menu/salva.png"></button><button class="dropdown" @mouseover="addHoverClass" @mouseout="removeHoverClass"><img src="../assets/Impress/icons/icons_menu/dropdown-icon.png"></button>
       <div class="vl"></div>
@@ -56,9 +56,15 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   methods: {
+    changePPTX(title) {
+      this.updateTitleAndClose(title);
+    },
+    updateTitleAndClose(title) {
+      this.$emit('update-title', title);
+    },
     addHoverClass(event) {
       const prevButton = event.target.closest('.dropdown').previousElementSibling;
       if (prevButton && prevButton.tagName === 'BUTTON') {

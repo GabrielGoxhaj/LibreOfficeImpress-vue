@@ -30,7 +30,6 @@ import DiapositivaCurrent_SocialMediaMarketing from './components/SocialMediaMar
 const diapositivaNumber = ref(1);
 const maxDiapositiva = ref(1);
 const title_pptx = ref('Senza Nome 1.pptx');
-const currentPPTX = ref('');
 
 const updateDiapositiva = (diapositiva) => {
   diapositivaNumber.value = diapositiva;
@@ -42,10 +41,7 @@ const updateMaxDiapositiva = (max) => {
 
 const updateTitle = (title) => {
   title_pptx.value = title;
-};
-
-const changePPTX = (pptx) => {
-  currentPPTX.value = pptx;
+  updateDiapositiva(1);
 };
 
 const isDiapositiveMenuVisible = ref(true);
@@ -76,7 +72,7 @@ const closeDropdown = () => {
   <div class="libreOfficeImpress">
     <TitleBar :title_pptx="title_pptx"/>
     <div class="menu">
-      <MenuLibreOfficeImpress @toggle-dropdown="toggleDropdown" />
+      <MenuLibreOfficeImpress @toggle-dropdown="toggleDropdown"/>
       <div id="dropdownsWrapper">
         <FileDropdown @toggle-dropdown="toggleDropdown" v-if="showDropdown === 'File'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
@@ -105,7 +101,7 @@ const closeDropdown = () => {
         <AiutoDropdown v-if="showDropdown === 'Aiuto'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
       </div>
-      <MenuIconLibreOfficeImpress />
+      <MenuIconLibreOfficeImpress @update-title="updateTitle"/>
     </div>
     <div id="mainWrapper">
 
@@ -126,6 +122,7 @@ const closeDropdown = () => {
 
       <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
       </div>
+      <!-- <Proprietà /> -->
       <MenuLaterale v-if="isMenuLateraleVisible" />
     </div>
     <div class="footer">

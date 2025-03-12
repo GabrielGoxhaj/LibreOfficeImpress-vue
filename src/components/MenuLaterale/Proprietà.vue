@@ -1,5 +1,5 @@
 <template>
-    <div style="overflow-y: auto;">
+    <div class="proprietà" style="overflow-y: auto; overflow-x: hidden;">
         <p>Proprietà</p>
         <details>
             <summary>Diapositiva</summary>
