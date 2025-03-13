@@ -27,44 +27,59 @@ import DiapositivaCurrent_IVA from './components/IVA/DiapositivaCurrent_IVA.vue'
 import DiapositiveMenu_SocialMediaMarketing from './components/SocialMediaMarketing/DiapositiveMenu_SocialMediaMarketing.vue';
 import DiapositivaCurrent_SocialMediaMarketing from './components/SocialMediaMarketing/DiapositivaCurrent_SocialMediaMarketing.vue';
 
-const diapositivaNumber = ref(1);
-const maxDiapositiva = ref(1);
+// titolo pptx
 const title_pptx = ref('Senza Nome 1.pptx');
-
-const updateDiapositiva = (diapositiva) => {
-  diapositivaNumber.value = diapositiva;
-};
-
-const updateMaxDiapositiva = (max) => {
-  maxDiapositiva.value = max;
-};
-
 const updateTitle = (title) => {
   title_pptx.value = title;
   updateDiapositiva(1);
 };
 
+// funzioni e costanti per dinamicizzare attuale dispositiva e il massimo di diapositive per ciascun file
+const diapositivaNumber = ref(1);
+const maxDiapositiva = ref(1);
+const updateDiapositiva = (diapositiva) => {
+  diapositivaNumber.value = diapositiva;
+};
+const updateMaxDiapositiva = (max) => {
+  maxDiapositiva.value = max;
+};
+
+// visibilità dei menu laterali alla diapositiva
 const isDiapositiveMenuVisible = ref(true);
 const hideDiapositiveMenu = () => {
   isDiapositiveMenuVisible.value = !isDiapositiveMenuVisible.value;
 };
-
 const isMenuLateraleVisible = ref(true);
 const hideMenuLaterale = () => {
   isMenuLateraleVisible.value = !isMenuLateraleVisible.value;
 };
+const isSubMenuLateraleVisible = ref(false);
+const showSubMenuLaterale = () => {
+  isSubMenuLateraleVisible.value = !isSubMenuLateraleVisible.value
+}
 
+// funzioni e costanti per i vari dropdown del menu superiore
 const showDropdown = ref(null);
 const dropdownPosition = ref({ top: 0, left: 0 });
-
 const toggleDropdown = ({ type, position }) => {
   showDropdown.value = showDropdown.value === type ? null : type;
   dropdownPosition.value = position;
 };
-
 const closeDropdown = () => {
   showDropdown.value = null;
 };
+
+// funzioni e costanti per i vari dropdown dei dropdown (submenu)
+const showSubDropdown = ref(null);
+const subDropdownPosition = ref({ top: 0, left: 0 });
+const toggleSubDropdown = ({ type, position }) => {
+  console.log(showSubDropdown.value);
+  showSubDropdown.value = showSubDropdown.value === type ? null : type;
+  subDropdownPosition.value = position;
+};
+const closeSubDropdown = () => {
+  showSubDropdown.value = null;
+}
 
 </script>
 
@@ -74,13 +89,15 @@ const closeDropdown = () => {
     <div class="menu">
       <MenuLibreOfficeImpress @toggle-dropdown="toggleDropdown"/>
       <div id="dropdownsWrapper">
-        <FileDropdown @toggle-dropdown="toggleDropdown" v-if="showDropdown === 'File'"
-          :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
-        <div id="dropdownsFileWrapper">
-          <DocumentiRecentiDropdown v-if="showDropdown === 'DocumentiRecenti'"
-            @update-title="updateTitle"
-            @toggle-dropdown="closeDropdown"
+        <div id="fileWrapper">
+          <FileDropdown @toggle-sub-dropdown="toggleSubDropdown" v-if="showDropdown === 'File'"
             :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
+            <!-- Dropdown di File -->
+            <DocumentiRecentiDropdown v-if="showSubDropdown === 'DocumentiRecenti'"
+              @update-title="updateTitle"
+              @toggle-dropdown="closeDropdown"
+              @toggle-sub-dropdown="closeSubDropdown"
+              :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
         </div>
         <ModificaDropdown v-if="showDropdown === 'Modifica'"
           :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px' }" />
@@ -112,19 +129,19 @@ const closeDropdown = () => {
       <DiapositiveMenu_SocialMediaMarketing v-if="isDiapositiveMenuVisible && title_pptx === 'Social Media Marketing.pptx'" @update-title="updateTitle" @update-diapositiva="updateDiapositiva" @update-max-diapositiva="updateMaxDiapositiva" />
 
       <div style="display:flex; align-items: center;">
-      <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/> <!-- width DiapositiveMenu 168.52px -->
+      <Nascondi @click="hideDiapositiveMenu" :style="isDiapositiveMenuVisible ? '' : 'transform: rotate(180deg); margin-right: 121.26px'"/>
       
-      <!-- View della diapositiva (IVA non ancora ultimato) -->
+      <!-- View della diapositiva -->
       <DiapositivaCurrent_IVA v-if="title_pptx === 'IVA.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
       <DiapositivaCurrent_IlSistemaSolare v-if="title_pptx === 'Il Sistema Solare.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
       <DiapositivaCurrent_SenzaNome1 v-if="title_pptx === 'Senza Nome 1.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
       <DiapositivaCurrent_SocialMediaMarketing v-if="title_pptx === 'Social Media Marketing.pptx'" style="max-height: 410px;" :diapositivaNumber="diapositivaNumber" />
 
-      <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" /> <!-- width MenuLaterale 37px + width DiapositiveMenu 84.26px -->
+      <Nascondi @click="hideMenuLaterale" :style="isMenuLateraleVisible && isDiapositiveMenuVisible ? 'transform: rotate(180deg)' : isMenuLateraleVisible && !isDiapositiveMenuVisible ? 'transform: rotate(180deg); margin-left: 84.26px' : (isDiapositiveMenuVisible ? 'margin-left: 37px' : 'margin-left: 121.26px')" />
       </div>
 
       <!-- Wrapper Menu Laterale DX -->
-      <div>
+      <div class="subMenuLateraleWrapper">
         <Proprietà style="display: none;" />
         <Diapositive_Schema style="display: none;" />
         <MenuLaterale v-if="isMenuLateraleVisible" />

@@ -3,7 +3,7 @@
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-nuovo.png">Nuovo</div><g>&#x1F782;</g></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-apri.png">Apri...</div></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Apri in remoto...</div></a>
-        <a @click="dropdownToggle($event, 'DocumentiRecenti')" style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
+        <a @click="subDropdownToggle($event, 'DocumentiRecenti')" style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Chiudi</div></a>
         <hr />
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Procedure guidate</div><g>&#x1F782;</g></a>
@@ -42,13 +42,15 @@ export default {
         }
     },
     methods: {
-        dropdownToggle(event, dropdownType) {
-            const buttonRect = event.target.getBoundingClientRect();
-            this.$emit('toggle-dropdown', {
-                type: dropdownType,
+        subDropdownToggle(event, subDropdownType) {
+            const aElement = event.target.closest('a'); // Find the closest <a> element
+            const aRect = aElement.getBoundingClientRect(); // Get the bounding rectangle of the <a> element
+            console.log('Emitting toggle-sub-dropdown with:', subDropdownType, aRect); // Add this line for debugging
+            this.$emit('toggle-sub-dropdown', {
+                type: subDropdownType,
                 position: {
-                    top: buttonRect.top,
-                    left: buttonRect.right
+                    top: aRect.top,
+                    left: aRect.right,
                 }
             });
         }
