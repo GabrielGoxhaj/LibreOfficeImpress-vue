@@ -4,7 +4,7 @@
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-apri.png">Apri...</div></a>
         <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Apri in remoto...</div></a>
         <a @click="subDropdownToggle($event, 'DocumentiRecenti')" style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-documenti-recenti.png">Documenti recenti</div><g>&#x1F782;</g></a>
-        <a><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Chiudi</div></a>
+        <a><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-chiudi.png">Chiudi</div></a>
         <hr />
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/vuoto-16x16.png">Procedure guidate</div><g>&#x1F782;</g></a>
         <a style="display: flex; justify-content: space-between;"><div><img src="../../assets/Impress/icons/icons_dropdown/file/file-modelli.png">Modelli</div><g>&#x1F782;</g></a>
