@@ -10,7 +10,7 @@ import InserisciDropdown from './components/MenuDropdowns/InserisciDropdown.vue'
 import FormatoDropdown from './components/MenuDropdowns/FormatoDropdown.vue';
 import DiapositivaDropdown from './components/MenuDropdowns/DiapositivaDropdown.vue';
 import PresentazioneDropdown from './components/MenuDropdowns/PresentazioneDropdown.vue';
-import StrumentiDiapositiva from './components/MenuDropdowns/StrumentiDiapositiva.vue';
+import StrumentiDiapositiva from './components/MenuDropdowns/StrumentiDropdown.vue';
 import FinestraDropdown from './components/MenuDropdowns/FinestraDropdown.vue';
 import AiutoDropdown from './components/MenuDropdowns/AiutoDropdown.vue';
 import DiapositiveMenu_IlSistemaSolare from './components/IlSistemaSolare/DiapositiveMenu_IlSistemaSolare.vue';
